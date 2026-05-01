@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Build output
+.next/
+out/
+build/
+dist/
+artifacts/
+cache/
+
+# Deployment data (contains addresses that may change)
+contracts/deployments.json
+
+# Coverage
+coverage/
+coverage.json
+
+# TypeScript
+typechain/
+typechain-types/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files — keep package-lock.json for reproducible builds
