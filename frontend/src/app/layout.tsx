@@ -10,8 +10,8 @@ const Providers = dynamic(() => import("./providers").then((m) => m.Providers), 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LitSwap — DEX on LitVM",
-  description: "The first decentralized exchange on LitVM — swap, earn, and provide liquidity with zkLTC.",
+  title: "LitSwap | DEX on LitVM",
+  description: "The first decentralized exchange on LitVM - swap, earn, and provide liquidity with zkLTC.",
   icons: {
     icon: "/favicon.ico",
   },
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               {children}
             </main>
             <footer className="border-t border-white/5 py-6 text-center text-sm text-slate-500">
-              <p>LitSwap — Powered by <span className="text-purple-400">LitVM</span> • Built on Litecoin</p>
+              <p>LitSwap | Powered by <span className="text-purple-400">LitVM</span> • Built on Litecoin</p>
             </footer>
           </div>
         </Providers>
