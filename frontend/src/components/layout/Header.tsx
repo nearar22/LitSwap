@@ -19,11 +19,9 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/5 glass">
       <div className="container mx-auto px-4 max-w-6xl h-16 flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center glow-purple-sm group-hover:glow-purple transition-all">
-              <Zap className="w-4 h-4 text-white" />
-            </div>
-            <span className="font-bold text-lg text-gradient">LitSwap</span>
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <img src="/logo.svg" alt="LitSwap Logo" className="w-9 h-9 drop-shadow-lg group-hover:drop-shadow-[0_0_12px_rgba(168,85,247,0.6)] transition-all duration-300" />
+            <span className="font-bold text-xl text-gradient">LitSwap</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
