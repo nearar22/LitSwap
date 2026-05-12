@@ -1,6 +1,8 @@
 {
-  "buildCommand": "cd frontend-v2 && npm install && NITRO_PRESET=vercel npm run build",
-  "outputDirectory": "frontend-v2/.vercel/output",
-  "installCommand": "echo Skipping root install",
-  "framework": null
+  "buildCommand": "cd frontend-v2 && npm install --no-audit --no-fund && npm run build",
+  "outputDirectory": "frontend-v2/dist",
+  "framework": null,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

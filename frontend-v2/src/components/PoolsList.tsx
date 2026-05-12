@@ -35,8 +35,8 @@ export function PoolsList() {
     query: { enabled: total > 0 },
   });
 
-  const addrs = (pairAddrs.data ?? [])
-    .map((r) => (r.status === "success" ? (r.result as unknown as Address) : null))
+  const addrs = ((pairAddrs.data ?? []) as Array<{ status: string; result?: unknown }>)
+    .map((r) => (r.status === "success" ? (r.result as Address) : null))
     .filter(Boolean) as Address[];
 
   const meta = useReadContracts({
