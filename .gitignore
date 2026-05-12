@@ -39,6 +39,11 @@ Thumbs.db
 .lovable/
 bun.lock
 
+# Brand assets (not for public sharing)
+branding/
+litswap_banner_pro.*
+litswap_logo_pro.*
+
 # Logs
 *.log
 npm-debug.log*
