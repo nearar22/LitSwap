@@ -81,12 +81,12 @@ export function ActivityFeed({ limit = 8 }: { limit?: number }) {
   });
 
   const pairTokens = useMemo(() => {
-    const m = new Map<Address, { t0?: Token; t1?: Token }>();
+    const m = new Map<string, { t0?: Token; t1?: Token }>();
     if (!tokenMeta.data) return m;
     addrs.forEach((p, i) => {
       const t0 = tokenMeta.data[i * 2]?.result as Address | undefined;
       const t1 = tokenMeta.data[i * 2 + 1]?.result as Address | undefined;
-      m.set(p, { t0: tokenFor(t0), t1: tokenFor(t1) });
+      m.set(p.toLowerCase(), { t0: tokenFor(t0), t1: tokenFor(t1) });
     });
     return m;
   }, [tokenMeta.data, addrs]);
@@ -191,7 +191,7 @@ export function ActivityFeed({ limit = 8 }: { limit?: number }) {
       ) : (
         <ul className="divide-y divide-border/30">
           {rows.map((r) => {
-            const meta = pairTokens.get(r.pair);
+            const meta = pairTokens.get(r.pair.toLowerCase());
             const t0 = meta?.t0;
             const t1 = meta?.t1;
             // Direction: if amount0In > 0 → swapped t0 → t1
