@@ -41,7 +41,7 @@ function Index() {
               Trade at the speed of <span className="text-gradient-brand">light</span>.
             </h1>
             <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-              LitSwap is a Uniswap V2-style exchange built on LitVM.
+              LitSwap is the native decentralized exchange on LitVM.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
@@ -86,7 +86,7 @@ function Index() {
           {[
             { icon: Zap, title: "Sub-second finality", desc: "Trades settle in ~1s thanks to LitVM's ZK rollup architecture." },
             { icon: ShieldCheck, title: "Litecoin security", desc: "Inherits the trust model of one of the longest-running blockchains." },
-            { icon: Droplets, title: "V2 liquidity", desc: "Battle-tested constant-product pools, fork of Uniswap V2." },
+            { icon: Droplets, title: "Deep liquidity", desc: "Battle-tested constant-product pools with predictable pricing." },
             { icon: Activity, title: "On-chain quotes", desc: "Live router quotes, no off-chain orderbook, no middlemen." },
           ].map((f) => (
             <div key={f.title} className="glass rounded-2xl p-5">

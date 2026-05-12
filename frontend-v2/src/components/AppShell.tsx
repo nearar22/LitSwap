@@ -134,7 +134,7 @@ export function AppShell() {
 
       <footer className="border-t border-border/50 mt-20">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
-          <div>© {new Date().getFullYear()} LitSwap · Uniswap V2 fork on LitVM</div>
+          <div>© {new Date().getFullYear()} LitSwap · Built on LitVM</div>
           <div className="flex gap-4">
             <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="hover:text-foreground">Faucet</a>
             <a href="https://liteforge.explorer.caldera.xyz" target="_blank" rel="noreferrer" className="hover:text-foreground">Explorer</a>
