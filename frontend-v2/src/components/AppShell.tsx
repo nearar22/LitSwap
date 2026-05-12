@@ -1,8 +1,10 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { motion } from "framer-motion";
-import { Wallet, ChevronDown, AlertTriangle } from "lucide-react";
+import { Wallet, ChevronDown, AlertTriangle, Droplets } from "lucide-react";
 import { CommandPalette, CommandPaletteTrigger } from "./CommandPalette";
+
+const FAUCET_URL = "https://liteforge.bridge.caldera.xyz";
 
 const navItems = [
   { to: "/swap", label: "Swap" },
@@ -57,6 +59,16 @@ export function AppShell() {
 
           <div className="ml-auto flex items-center gap-3">
             <CommandPaletteTrigger />
+            <a
+              href={FAUCET_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs font-medium hover:bg-surface-3 transition"
+              title="Get testnet zkLTC"
+            >
+              <Droplets className="h-3.5 w-3.5 text-brand" />
+              Faucet
+            </a>
             <div className="hidden sm:flex items-center gap-2 glass rounded-full px-3 py-1.5 text-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
               <span className="text-muted-foreground">Chain</span>
@@ -124,6 +136,7 @@ export function AppShell() {
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
           <div>© {new Date().getFullYear()} LitSwap · Uniswap V2 fork on LitVM</div>
           <div className="flex gap-4">
+            <a href={FAUCET_URL} target="_blank" rel="noreferrer" className="hover:text-foreground">Faucet</a>
             <a href="https://liteforge.explorer.caldera.xyz" target="_blank" rel="noreferrer" className="hover:text-foreground">Explorer</a>
             <a href="https://liteforge.rpc.caldera.xyz/http" target="_blank" rel="noreferrer" className="hover:text-foreground">RPC</a>
           </div>
