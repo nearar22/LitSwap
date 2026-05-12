@@ -35,6 +35,10 @@ typechain-types/
 .DS_Store
 Thumbs.db
 
+# Scaffolding leftovers
+.lovable/
+bun.lock
+
 # Logs
 *.log
 npm-debug.log*
