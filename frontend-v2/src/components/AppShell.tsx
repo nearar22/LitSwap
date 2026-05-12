@@ -1,6 +1,7 @@
 import { Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { motion } from "framer-motion";
+import { Wallet, ChevronDown, AlertTriangle } from "lucide-react";
 import { CommandPalette, CommandPaletteTrigger } from "./CommandPalette";
 
 const navItems = [
@@ -61,11 +62,54 @@ export function AppShell() {
               <span className="text-muted-foreground">Chain</span>
               <span className="font-medium">4441</span>
             </div>
-            <ConnectButton
-              chainStatus="none"
-              showBalance={false}
-              accountStatus={{ smallScreen: "avatar", largeScreen: "full" }}
-            />
+            <ConnectButton.Custom>
+              {({ account, chain, openConnectModal, openAccountModal, openChainModal, mounted }) => {
+                const ready = mounted;
+                const connected = ready && account && chain;
+                if (!ready) {
+                  return (
+                    <div
+                      aria-hidden
+                      className="h-9 w-32 rounded-full bg-surface-2/60 animate-pulse"
+                    />
+                  );
+                }
+                if (!connected) {
+                  return (
+                    <button
+                      onClick={openConnectModal}
+                      className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-4 py-2 text-sm font-semibold text-[oklch(0.18_0.04_200)] hover:brightness-110 transition"
+                    >
+                      <Wallet className="h-4 w-4" />
+                      Connect Wallet
+                    </button>
+                  );
+                }
+                if (chain.unsupported) {
+                  return (
+                    <button
+                      onClick={openChainModal}
+                      className="inline-flex items-center gap-2 rounded-full bg-destructive/15 text-destructive border border-destructive/30 px-3 py-1.5 text-sm font-medium hover:bg-destructive/25 transition"
+                    >
+                      <AlertTriangle className="h-4 w-4" />
+                      Wrong network
+                    </button>
+                  );
+                }
+                return (
+                  <button
+                    onClick={openAccountModal}
+                    className="inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-sm font-medium hover:bg-surface-3 transition"
+                  >
+                    <span className="grid place-items-center h-6 w-6 rounded-full bg-brand/15 text-brand">
+                      <Wallet className="h-3.5 w-3.5" />
+                    </span>
+                    <span className="num font-mono text-xs">{account.displayName}</span>
+                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+                  </button>
+                );
+              }}
+            </ConnectButton.Custom>
           </div>
         </div>
       </header>
