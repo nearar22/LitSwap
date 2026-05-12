@@ -28,8 +28,8 @@ export function LtcIcon(p: IconProps) {
     <Wrap {...p}>
       <defs>
         <linearGradient id="ltc-bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="#BFBBBB" />
-          <stop offset="1" stopColor="#7C7C7C" />
+          <stop offset="0" stopColor="#4C7AD2" />
+          <stop offset="1" stopColor="#345D9D" />
         </linearGradient>
         <linearGradient id="ltc-sheen" x1="16" y1="2" x2="16" y2="22" gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor="#fff" stopOpacity="0.35" />
