@@ -39,5 +39,5 @@ Thumbs.db
 *.log
 npm-debug.log*
 
-# Lock files — keep package-lock.json for reproducible builds
+# Lock files: keep package-lock.json for reproducible builds.
 .vercel
