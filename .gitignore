@@ -41,3 +41,9 @@ npm-debug.log*
 
 # Lock files: keep package-lock.json for reproducible builds.
 .vercel
+
+# Local-only branding assets (banners and logos)
+litswap_banner_pro.*
+litswap_logo_pro.*
+branding/*.png
+branding/*.svg
